@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Declaration{% endblock %}
+
+{% block body %}
+    <h1>Declaration</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ declaration.id }}</td>
+            </tr>
+            <tr>
+                <th>Ministre</th>
+                <td>{{ declaration.ministre }}</td>
+            </tr>
+            <tr>
+                <th>Fonction</th>
+                <td>{{ declaration.fonction }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ declaration.nom }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ declaration.date ? declaration.date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Lien</th>
+                <td>{{ declaration.lien }}</td>
+            </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ declaration.categorie }}</td>
+            </tr>
+            <tr>
+                <th>Motcle</th>
+                <td>{{ declaration.motcle }}</td>
+            </tr>
+            <tr>
+                <th>Source</th>
+                <td>{{ declaration.source }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('declaration_index') }}">back to list</a>
+
+    <a href="{{ path('declaration_edit', {'id': declaration.id}) }}">edit</a>
+
+    {{ include('declaration/_delete_form.html.twig') }}
+{% endblock %}

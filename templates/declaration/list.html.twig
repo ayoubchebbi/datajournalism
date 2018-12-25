@@ -1,0 +1,152 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Declaration{% endblock %}
+ {% block stylesheets %}
+     <link href="{{ asset('build/css/bootstrap.css') }}" rel="stylesheet" />
+     <link href="{{ asset('build/css/style.css') }}" rel="stylesheet" />
+     <link href="{{ asset('build/css/responsive.css') }}" rel="stylesheet" />
+     <style>
+         .sidebar .user-info {
+             white-space: nowrap;
+             position: relative;
+             border-bottom: 1px solid #e9e9e9;
+             background: url({{ asset('build/image/user-img-background.jpg') }}) no-repeat no-repeat;
+             height: 135px;
+         }
+     </style>
+ {% endblock %}
+
+{% block body %}
+    <div class="page-wrapper">
+        <div class="preloader" style="display: none;"></div>
+        <header class="main-header">
+            <div class="header-upper">
+                <div class="auto-container">
+                    <div class="clearfix">
+                        <div class="pull-left logo-box">
+                            <div class="logo"><a href="/"><img src="/build/images/logo.png" alt="" title=""></a></div>
+                        </div>
+                        <div class="nav-outer pull-right clearfix">
+                            <nav class="main-menu navbar-expand-md">
+                                <div class="navbar-header">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+
+                                <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix">
+                                        <li class="">
+                                            <a href="/">Accueil</a>
+                                        </li>
+                                        <li class="current">
+                                            <a href="/declaration">Declarations</a>
+                                        </li>
+                                        <li>
+                                            <a href="/actualite">Actualité</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </nav>
+                            <div class="outer-box clearfix">
+                                <div class="button-box">
+                                    <a href="/login" class="theme-btn btn-style-one">Connexion</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sticky-header">
+                <div class="auto-container clearfix">
+                    <div class="logo pull-left">
+                        <a href="/" class="img-responsive"><img src="/build/images/logo-small.png" alt="" title=""></a>
+                    </div>
+                    <div class="right-col pull-right">
+                        <nav class="main-menu navbar-expand-md">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="banner-section" style="background-image: url(/build/images/background/5.jpg)">
+            <h2>Declarations</h2>
+        </section>
+        <!--End Banner Section-->
+
+        <!--Shop Page Section-->
+        <section class="shop-page-section">
+            <div class="auto-container">
+                <div class="row clearfix">
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4">
+                                <h2>Filter</h2>
+                                <br/>
+                                {{ form_start(form, {'attr':{'class':'login100-form validate-form flex-sb flex-w'} }) }}
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Recherche</label>
+                                        {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+
+                                    </div>
+                                <br/>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Ministre</label>
+                                    {{ form_widget(form.ministre, {'attr': {'class': 'form-control'}}) }}
+
+                                </div><br/>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Date</label>
+                                    {{ form_widget(form.date, {'attr': {'class': 'form-control'}}) }}
+
+                                </div>
+
+
+
+                                <br/>
+                                {{ form_widget(form.login, {'attr': {'class': 'btn btn-primary pull-right'}}) }}
+
+                                {{ form_end(form) }}
+                            </div>
+                            <div class="col-8">
+                                <div class="row">
+                                    <!--Shop Item-->
+
+                                    {% for declaration in declarations %}
+
+                                        <div class="shop-item col-4">
+                                            <div class="inner-box">
+                                                <div class="image">
+                                                    <a href="shop-single.html"><img style="width:300px;height:200px"src={% if declaration.categorie == "video" %} "{{ asset('build/images/video.jpg') }}" {% endif %}{% if declaration.categorie == "text" %} "{{ asset('build/images/text.png') }}" {% endif %} alt="" /></a>
+                                                </div>
+                                                <div class="lower-content">
+                                                    <h3><a href="">{{ declaration.nom }}</a></h3>
+                                                    <div class="price">{{ declaration.ministre }}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!--End Shop Page Section-->
+
+
+    </div>
+
+{% endblock %}

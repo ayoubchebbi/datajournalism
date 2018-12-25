@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Declaration index{% endblock %}
+
+{% block body %}
+    <h1>Declaration index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ministre</th>
+                <th>Fonction</th>
+                <th>Nom</th>
+                <th>Date</th>
+                <th>Lien</th>
+                <th>Categorie</th>
+                <th>Motcle</th>
+                <th>Source</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for declaration in declarations %}
+            <tr>
+                <td>{{ declaration.id }}</td>
+                <td>{{ declaration.ministre }}</td>
+                <td>{{ declaration.fonction }}</td>
+                <td>{{ declaration.nom }}</td>
+                <td>{{ declaration.date ? declaration.date|date('Y-m-d') : '' }}</td>
+                <td>{{ declaration.lien }}</td>
+                <td>{{ declaration.categorie }}</td>
+                <td>{{ declaration.motcle }}</td>
+                <td>{{ declaration.source }}</td>
+                <td>
+                    <a href="{{ path('declaration_show', {'id': declaration.id}) }}">show</a>
+                    <a href="{{ path('declaration_edit', {'id': declaration.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('declaration_new') }}">Create new</a>
+{% endblock %}

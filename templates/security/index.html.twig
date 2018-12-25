@@ -1,0 +1,330 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Open Data Journalism{% endblock %}
+ {% block stylesheets %}
+     <link href="{{ asset('build/css/bootstrap.css') }}" rel="stylesheet" />
+     <link href="{{ asset('build/css/style.css') }}" rel="stylesheet" />
+     <link href="{{ asset('build/css/responsive.css') }}" rel="stylesheet" />
+     <style>
+         .sidebar .user-info {
+             white-space: nowrap;
+             position: relative;
+             border-bottom: 1px solid #e9e9e9;
+             background: url({{ asset('build/image/user-img-background.jpg') }}) no-repeat no-repeat;
+             height: 135px;
+         }
+     </style>
+ {% endblock %}
+{% block body %}
+    <div class="page-wrapper">
+        <div class="preloader" style="display: none;"></div>
+        <header class="main-header">
+            <div class="header-upper">
+                <div class="auto-container">
+                    <div class="clearfix">
+                        <div class="pull-left logo-box">
+                            <div class="logo"><a href="/"><img src="/build/images/logo.png" alt="" title=""></a></div>
+                        </div>
+                        <div class="nav-outer pull-right clearfix">
+
+                            <!-- Main Menu -->
+                            <nav class="main-menu navbar-expand-md">
+                                <div class="navbar-header">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+
+                                <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix">
+                                        <li class="current dropdown">
+                                            <a href="/">Accueil</a>
+                                        </li>
+                                        <li>
+                                            <a href="/declaration">Declarations</a>
+                                        </li>
+                                        <li>
+                                            <a href="/actualite">Actualité</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </nav>
+                            <div class="outer-box clearfix">
+                                <div class="button-box">
+                                    <a href="/login" class="theme-btn btn-style-one">Connexion</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sticky-header">
+                <div class="auto-container clearfix">
+                    <div class="logo pull-left">
+                        <a href="/" class="img-responsive"><img src="/build/images/logo-small.png" alt="" title=""></a>
+                    </div>
+                    <div class="right-col pull-right">
+                        <nav class="main-menu navbar-expand-md">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="banner-section" style="background-image: url(/build/images/background/5.jpg)">
+            <div class="auto-container">
+                <h2>Open Data</h2>
+                <h2>Pour Journalism</h2>
+                <br/>
+                <!--Search Form-->
+                <div class="search-form">
+                    <form method="post" action="/declarations">
+                        <div class="form-group clearfix">
+                            <select class="custom-select-box" id="ui-id-1" style="display: none;">
+                                <option>All</option>
+                                <option>One</option>
+                                <option>Two</option>
+                                <option>Three</option>
+                                <option>Four</option>
+                            </select><span tabindex="0" id="ui-id-1-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="ui-id-1-menu" aria-haspopup="true" class="ui-selectmenu-button ui-button ui-widget ui-selectmenu-button-closed ui-corner-all" aria-activedescendant="ui-id-2" aria-labelledby="ui-id-2" aria-disabled="false"><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-selectmenu-text">All</span></span>
+                            <input type="text" name="firstname" value="" placeholder="Searh here...." required="">
+                            <button type="submit" class="theme-btn dripicons-search"></button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!--End Banner Section-->
+
+        <!--Featured Section-->
+        <section class="featured-section">
+            <div class="auto-container">
+                <!--Sec Title-->
+                <div class="sec-title centered">
+                    <h2>Ministres</h2>
+                </div>
+                <div class="row clearfix">
+
+                    <!--Featured Block-->
+                    <div class="featured-block col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: hidden; animation-duration: 1500ms; animation-delay: 0ms; animation-name: none;">
+                            <div class="image">
+                                <a href="/declaration"><img src="/build/images/img/1.jpg" alt=""></a>
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="/declaration">Presidence du Gouvernement</a></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Featured Block-->
+                    <div class="featured-block col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms" style="visibility: hidden; animation-duration: 1500ms; animation-delay: 300ms; animation-name: none;">
+                            <div class="image">
+                                <a href="/declaration"><img src="/build/images/img/2.jpg" alt=""></a>
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="/declaration">Agriculture</a></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Featured Block-->
+                    <div class="featured-block col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms" style="visibility: hidden; animation-duration: 1500ms; animation-delay: 600ms; animation-name: none;">
+                            <div class="image">
+                                <a href="/declaration"><img src="/build/images/img/3.jpg" alt=""></a>
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="/declaration">Education</a></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Featured Block-->
+                    <div class="featured-block col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms" style="visibility: hidden; animation-duration: 1500ms; animation-delay: 900ms; animation-name: none;">
+                            <div class="image">
+                                <a href="/declaration"><img src="/build/images/img/4.jpg" alt=""></a>
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="/declaration">Equipement</a></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Featured Block-->
+                    <div class="featured-block col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: hidden; animation-duration: 1500ms; animation-delay: 0ms; animation-name: none;">
+                            <div class="image">
+                                <a href="/declaration"><img src="/build/images/img/5.jpg" alt=""></a>
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="/declaration">Enseignement universitaire et recherche scientifique</a></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Featured Block-->
+                    <div class="featured-block col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms" style="visibility: hidden; animation-duration: 1500ms; animation-delay: 300ms; animation-name: none;">
+                            <div class="image">
+                                <a href="/declaration"><img src="/build/images/img/6.jpg" alt=""></a>
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="/declaration">Transport</a></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Featured Block-->
+                    <div class="featured-block col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms" style="visibility: hidden; animation-duration: 1500ms; animation-delay: 600ms; animation-name: none;">
+                            <div class="image">
+                                <a href="/declaration"><img src="/build/images/img/7.jpg" alt=""></a>
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="/declaration">Finances</a></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Featured Block-->
+                    <div class="featured-block col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms" style="visibility: hidden; animation-duration: 1500ms; animation-delay: 900ms; animation-name: none;">
+                            <div class="image">
+                                <a href="/declaration"><img src="/build/images/resource/featured-8.jpg" alt=""></a>
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="/declaration">Juridique</a></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!--News Section-->
+        <section class="news-section">
+            <div class="auto-container">
+                <div class="row clearfix">
+
+                    <!--News Block-->
+                    <div class="news-block col-lg-4 col-md-6 col-sm-12">
+                        <div class="inner-box">
+                            <div class="post-date">10/27/2018</div>
+                            <h3><a href="https://www.youtube.com/watch?v=ViDod--Rxao">Réforme du système éducatif</a></h3>
+                            <div class="text">Partenariat avec orange, integration des technologies</div>
+                            <div class="author">
+                                <div class="author-image"><img src="/build/images/resource/author-5.jpg" alt=""></div>
+                                par Hatem Ben Salem
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--News Block-->
+                    <div class="news-block col-lg-4 col-md-6 col-sm-12">
+                        <div class="inner-box">
+                            <div class="post-date">04/10/2018</div>
+                            <h3><a href="http://www.arp.tn/site/main/AR/docs/reponses_gov/196.pdf">Retour des tunisiens de l'etranger</a></h3>
+                            <div class="text">Dispositif, retour des tunisiens de l'etranger</div>
+                            <div class="author">
+                                <div class="author-image"><img src="/build/images/resource/author-2.jpg" alt=""></div>
+                                par Radouan Ayara
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--News Block-->
+                    <div class="news-block col-lg-4 col-md-6 col-sm-12">
+                        <div class="inner-box">
+                            <div class="post-date">03/05/2018</div>
+                            <h3><a href="https://www.youtube.com/watch?v=u0uF5jla7H8">المعبر الحدودي حزوة</a></h3>
+                            <div class="text">رضا شلغوم وزير المالية: 5 مارس 2018 سيدخل المعبر الحدودي حزوة الطالب العربي حيز الاستغلال.</div>
+                            <div class="author">
+                                <div class="author-image"><img src="/build/images/resource/author-2.jpg" alt=""></div>
+                                par Ridha Chalgoum
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--End News Section-->
+
+        <!--Counter Section-->
+        <section class="counter-section">
+            <!--Title Box-->
+            <div class="title-box" style="background-image: url(/build/images/background/1.jpg)">
+                <div class="auto-container">
+                    <h2>Statistiques</h2>
+                </div>
+            </div>
+            <!--Lower Section-->
+            <div class="lower-section">
+                <div class="auto-container">
+                    <div class="fact-counter">
+                        <div class="row clearfix">
+                            <div class="column counter-column col-lg-4 col-md-6 col-sm-12">
+                                <div class="inner">
+                                    <div class="content">
+                                        <div class="count-outer count-box">
+                                            <span class="count-text" data-speed="4000" data-stop="30">0</span>
+                                        </div>
+                                        <h4 class="counter-title">Declarations</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column counter-column col-lg-4 col-md-6 col-sm-12">
+                                <div class="inner">
+                                    <div class="content">
+                                        <div class="count-outer count-box">
+                                            <span class="count-text" data-speed="2500" data-stop="8">0</span>
+                                        </div>
+                                        <h4 class="counter-title">Ministres</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column counter-column col-lg-4 col-md-6 col-sm-12">
+                                <div class="inner">
+                                    <div class="content">
+                                        <div class="count-outer count-box">
+                                            <span class="count-text" data-speed="4000" data-stop="4">0</span>
+                                        </div>
+                                        <h4 class="counter-title">Utilisateurs</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="main-footer alternate">
+            <div class="auto-container">
+                <div class="widgets-section">
+                    <div class="row clearfix">
+                        <!--big column-->
+                        <div class="big-column col-lg-5 col-md-12 col-sm-12">
+                        </div>
+                        <!--big column-->
+                        <div class="big-column col-lg-7 col-md-12 col-sm-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">© Copyright 2018 , OpenDataJournalism</div>
+            </div>
+        </footer>
+    </div>
+    </div>
+{% endblock %}

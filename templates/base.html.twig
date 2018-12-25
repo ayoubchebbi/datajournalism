@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="chrome theme-blue">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}OPEN DATA{% endblock %}</title>
+    {% block stylesheets %}
+
+        <link rel="icon" href="{{ asset('build/images/isamm_logo2.png') }}" type="image/x-icon">
+
+
+
+
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+
+    <script src="{{ asset('/build/js/jquery.js') }}"></script>
+    <script src="{{ asset('/build/js/popper.min.js') }}"></script>
+    <script src="{{ asset('/build/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('/build/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ asset('/build/js/jquery.fancybox.js') }}"></script>
+    <script src="{{ asset('/build/js/appear.js') }}"></script>
+    <script src="{{ asset('/build/js/owl.js') }}"></script>
+    <script src="{{ asset('/build/js/wow.js') }}"></script>
+    <script src="{{ asset('/build/js/script.js') }}"></script>
+    <script src="{{ asset('/build/js/jquery-ui.js') }}"></script>
+
+    <link href="https://snatchbot.me/sdk/webchat.css" rel="stylesheet" type="text/css"><script src="https://snatchbot.me/sdk/webchat.min.js"></script><script> Init('?botID=33829&appID=webchat', 600, 600, 'https://dvgpba5hywmpo.cloudfront.net/media/image/4xKws0tJn5vs1UpoK2NYRiyB1', 'bubble', '#00AFF0', 90, 90, 62.99999999999999, '', '1', '#FFFFFF', ); /* for authentication of its users, you can define your userID (add &userID={login}) */ </script>
+
+{% endblock %}
+</body>
+</html>

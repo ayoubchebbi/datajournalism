@@ -1,0 +1,100 @@
+{{ form_start(form, {'attr': {'class': 'form-control','style':'padding:100px'}}) }}
+
+    <button class="btn">{{ button_label|default('Save') }}</button>
+
+    <div class="row">
+        <div class="col-md-12 mb-3">
+            <label for="firstName">First name</label>
+            {{ form_widget(form.ministre, {'attr': {'class': 'form-control'}}) }}
+
+            <div class="invalid-feedback">
+                Valid first name is required.
+            </div>
+        </div>
+    </div>
+
+
+<div class="row">
+    <div class="col-md-12 mb-3">
+        <label for="firstName">First name</label>
+        {{ form_widget(form.fonction, {'attr': {'class': 'form-control'}}) }}
+
+        <div class="invalid-feedback">
+            Valid first name is required.
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-12 mb-3">
+        <label for="firstName">First name</label>
+        {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+
+        <div class="invalid-feedback">
+            Valid first name is required.
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12 mb-3">
+        <label for="firstName">First name</label>
+        {{ form_widget(form.date, {'attr': {'class': 'custom-select d-block w-100'}}) }}
+
+        <div class="invalid-feedback">
+            Valid first name is required.
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 mb-3">
+        <label for="firstName">First name</label>
+        {{ form_widget(form.lien, {'attr': {'class': 'form-control'}}) }}
+
+        <div class="invalid-feedback">
+            Valid first name is required.
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 mb-3">
+        <label for="firstName">First name</label>
+        {{ form_widget(form.categorie, {'attr': {'class': 'form-control'}}) }}
+
+        <div class="invalid-feedback">
+            Valid first name is required.
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 mb-3">
+        <label for="firstName">First name</label>
+        {{ form_widget(form.motcle, {'attr': {'class': 'form-control'}}) }}
+
+        <div class="invalid-feedback">
+            Valid first name is required.
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 mb-3">
+        <label for="firstName">First name</label>
+        {{ form_widget(form.source, {'attr': {'class': 'form-control'}}) }}
+
+        <div class="invalid-feedback">
+            Valid first name is required.
+        </div>
+    </div>
+</div>
+
+{{ form_widget(form.source, {'attr': {'class': 'form-control'}}) }}
+
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+{{ form_end(form) }}
